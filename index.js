@@ -1,6 +1,10 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const writeToFile = require("./src/template.js");
+const Engineer = require("./lib/engineer.js");
+const Manager = require("./lib/manager.js");
+const Intern = require("./lib/intern.js");
+const renderTempLiteral = require("./src/template.js");
+let employees = [];
 
 const questions = [
   {
@@ -26,7 +30,7 @@ const questions = [
   },
 ];
 
-function init() {
+function init(questions) {
   inquirer.prompt(questions).then((data) =>
     inquirer
       .prompt([
@@ -56,16 +60,52 @@ function init() {
         },
       ])
       .then(({ officeNumber, gitHubUserName, school }) => {
-        fs.writeFile(
-          "index.html",
-          writeToFile(data, officeNumber, gitHubUserName, school),
-          (err) => {
-            err ? console.log(err) : console.log("html file is ready!");
-          }
-        );
+        console.log(officeNumber, gitHubUserName, school, data);
+        if (officeNumber) {
+          let newManager = new Manager(
+            data.name,
+            data.id,
+            data.email,
+            officeNumber
+          );
+          employees.push(newManager);
+        }
+        if (gitHubUserName) {
+          let newEngineer = new Engineer(
+            data.name,
+            data.id,
+            data.email,
+            gitHubUserName
+          );
+          employees.push(newEngineer);
+        }
+        if (school) {
+          let newIntern = new Intern(data.name, data.id, data.email, school);
+          employees.push(newIntern);
+        }
+        inquirer
+          .prompt({
+            type: "list",
+            message: "Would you like to add another employee?",
+            choices: ["Yes", "No"],
+            name: "addAnother",
+          })
+          .then(({ addAnother }) => {
+            if (addAnother === "Yes") {
+              init(questions);
+            } else {
+              fs.writeFile(
+                "index.html",
+                renderTempLiteral(employees),
+                (err) => {
+                  err ? console.log(err) : console.log("html file is ready!");
+                }
+              );
+            }
+          });
       })
   );
 }
 
 // Function call to initialize app
-init();
+init(questions);
