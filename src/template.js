@@ -35,7 +35,7 @@ function renderTempLiteral(employees) {
         employees[i].email
       }">${employees[i].email}</a></li>`;
     if (employees[i].getRole() === "Engineer") {
-      htmlTemplate += `<li class="list-group-item special">GitHub: <a href = "https://github.com/${employees[i].gitHubUserName}">${employees[i].gitHubUserName}</a></li>
+      htmlTemplate += `<li class="list-group-item special">GitHub: <a href = "https://github.com/${employees[i].gitHubUserName}" target="_blank">${employees[i].gitHubUserName}</a></li>
     </ul>
     </div>`;
     } else if (employees[i].getRole() === "Intern") {
@@ -92,7 +92,7 @@ function renderTempLiteral(employees) {
 // template literal for all employees. use for each loop to iterate through the array of objects (employees). assign that to a variable (const literal1 = ), and then use that variable to insert into a template literal for the whole html template literal ${literal1}...?????
 
 module.exports = renderTempLiteral;
-module.exports = htmlTemplate;
+// module.exports = htmlTemplate;
 
 //// card template /////
 {
