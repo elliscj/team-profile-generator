@@ -5,6 +5,7 @@ const Manager = require("./lib/manager.js");
 const Intern = require("./lib/intern.js");
 const renderTempLiteral = require("./src/template.js");
 const renderCard = require("./src/template.js");
+const htmlTemplate = require("htmlTemplate");
 
 let employees = [];
 
@@ -96,13 +97,9 @@ function init(questions) {
             if (addAnother === "Yes") {
               init(questions);
             } else {
-              fs.writeFile(
-                "./dist/index.html",
-                renderTempLiteral(employees),
-                (err) => {
-                  err ? console.log(err) : console.log("html file is ready!");
-                }
-              );
+              fs.writeFile("./dist/index.html", htmlTemplate, (err) => {
+                err ? console.log(err) : console.log("html file is ready!");
+              });
               console.log(employees);
             }
           });
