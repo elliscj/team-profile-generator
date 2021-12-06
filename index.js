@@ -97,9 +97,13 @@ function init(questions) {
             if (addAnother === "Yes") {
               init(questions);
             } else {
-              fs.writeFile("./dist/index.html", htmlTemplate, (err) => {
-                err ? console.log(err) : console.log("html file is ready!");
-              });
+              fs.writeFile(
+                "./dist/index.html",
+                renderTempLiteral(employees),
+                (err) => {
+                  err ? console.log(err) : console.log("html file is ready!");
+                }
+              );
               console.log(employees);
             }
           });

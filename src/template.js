@@ -57,6 +57,8 @@ function renderTempLiteral(employees) {
   </body>
 </html>`;
 
+  return htmlTemplate;
+
   // `${employees
   //     .map((employee) => {
   //       return `<div class="card col-sm-8 col-md-4">
@@ -92,7 +94,7 @@ function renderTempLiteral(employees) {
 module.exports = renderTempLiteral;
 module.exports = htmlTemplate;
 
-//// card template
+//// card template /////
 {
   /* <div class="card col-sm-8 col-md-4">
   <div class="card-body">
@@ -107,34 +109,34 @@ module.exports = htmlTemplate;
 </div> */
 }
 
-function renderCard(employees) {
-  console.log(employees[1].name);
-  console.log(employees.length);
-  employees.map((employee) => {
-    return `<div class="card col-sm-8 col-md-4">
-    <div class="card-body">
-      <h5 class="card-title">${employee.name}</h5>
-       <p class="card-text">${employee.getRole()}</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item id">${employee.id}</li>
-      <li class="list-group-item email">${employee.email}</li>
-      <li class="list-group-item special">${employee.getRole()}</li>
-    </ul>
-  </div>`;
-  });
-  // for (let i = 0; i < employees.length; i++) {
-  //   console.log(employees[i].name);
-  //   //     return `<div class="card col-sm-8 col-md-4">
-  //   //   <div class="card-body">
-  //   //     <h5 class="card-title">${employees[i].name}</h5>
-  //   //     <p class="card-text">${employees[i].getRole()}</p>
-  //   //   </div>
-  //   //   <ul class="list-group list-group-flush">
-  //   //     <li class="list-group-item">${employees[i].id}</li>
-  //   //     <li class="list-group-item">${employees[i].email}</li>
-  //   //     <li class="list-group-item">${employees[i].getRole()}</li>
-  //   //   </ul>
-  //   // </div>`;
-  // }
-}
+// function renderCard(employees) {
+//   console.log(employees[1].name);
+//   console.log(employees.length);
+//   employees.map((employee) => {
+//     return `<div class="card col-sm-8 col-md-4">
+//     <div class="card-body">
+//       <h5 class="card-title">${employee.name}</h5>
+//        <p class="card-text">${employee.getRole()}</p>
+//     </div>
+//     <ul class="list-group list-group-flush">
+//       <li class="list-group-item id">${employee.id}</li>
+//       <li class="list-group-item email">${employee.email}</li>
+//       <li class="list-group-item special">${employee.getRole()}</li>
+//     </ul>
+//   </div>`;
+//   });
+//   // for (let i = 0; i < employees.length; i++) {
+//   //   console.log(employees[i].name);
+//   //   //     return `<div class="card col-sm-8 col-md-4">
+//   //   //   <div class="card-body">
+//   //   //     <h5 class="card-title">${employees[i].name}</h5>
+//   //   //     <p class="card-text">${employees[i].getRole()}</p>
+//   //   //   </div>
+//   //   //   <ul class="list-group list-group-flush">
+//   //   //     <li class="list-group-item">${employees[i].id}</li>
+//   //   //     <li class="list-group-item">${employees[i].email}</li>
+//   //   //     <li class="list-group-item">${employees[i].getRole()}</li>
+//   //   //   </ul>
+//   //   // </div>`;
+//   // }
+// }
