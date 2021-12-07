@@ -4,7 +4,6 @@ const Engineer = require("./lib/engineer.js");
 const Manager = require("./lib/manager.js");
 const Intern = require("./lib/intern.js");
 const renderTempLiteral = require("./src/template.js");
-const renderCard = require("./src/template.js");
 
 let employees = [];
 

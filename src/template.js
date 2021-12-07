@@ -58,41 +58,9 @@ function renderTempLiteral(employees) {
 </html>`;
 
   return htmlTemplate;
-
-  // `${employees
-  //     .map((employee) => {
-  //       return `<div class="card col-sm-8 col-md-4">
-  //     <div class="card-body">
-  //        <h5 class="card-title">${employee.name}</h5>
-  //        <p class="card-text">${employee.getRole()}</p>
-  //     </div>
-  //     <ul class="list-group list-group-flush">
-  //       <li class="list-group-item id">ID: ${employee.id}</li>
-  //       <li class="list-group-item email">Email: <a href = "mailto: ${
-  //         employee.email
-  //       }">${employee.email}</a></li>
-  //       <li class="list-group-item special">${employee.getRole()}</li>
-  //     </ul>
-  //     </div>`;
-  //     })
-  //     .join("")}
-  //     </div>
-  //     <script
-  //       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  //       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  //       crossorigin="anonymous"
-  //     ></script>
-  //   </body>
-  // </html>`;
-
-  //call getRole and do if statement
-  // if role is manager
 }
 
-// template literal for all employees. use for each loop to iterate through the array of objects (employees). assign that to a variable (const literal1 = ), and then use that variable to insert into a template literal for the whole html template literal ${literal1}...?????
-
 module.exports = renderTempLiteral;
-// module.exports = htmlTemplate;
 
 //// card template /////
 {
@@ -108,35 +76,3 @@ module.exports = renderTempLiteral;
   </ul>
 </div> */
 }
-
-// function renderCard(employees) {
-//   console.log(employees[1].name);
-//   console.log(employees.length);
-//   employees.map((employee) => {
-//     return `<div class="card col-sm-8 col-md-4">
-//     <div class="card-body">
-//       <h5 class="card-title">${employee.name}</h5>
-//        <p class="card-text">${employee.getRole()}</p>
-//     </div>
-//     <ul class="list-group list-group-flush">
-//       <li class="list-group-item id">${employee.id}</li>
-//       <li class="list-group-item email">${employee.email}</li>
-//       <li class="list-group-item special">${employee.getRole()}</li>
-//     </ul>
-//   </div>`;
-//   });
-//   // for (let i = 0; i < employees.length; i++) {
-//   //   console.log(employees[i].name);
-//   //   //     return `<div class="card col-sm-8 col-md-4">
-//   //   //   <div class="card-body">
-//   //   //     <h5 class="card-title">${employees[i].name}</h5>
-//   //   //     <p class="card-text">${employees[i].getRole()}</p>
-//   //   //   </div>
-//   //   //   <ul class="list-group list-group-flush">
-//   //   //     <li class="list-group-item">${employees[i].id}</li>
-//   //   //     <li class="list-group-item">${employees[i].email}</li>
-//   //   //     <li class="list-group-item">${employees[i].getRole()}</li>
-//   //   //   </ul>
-//   //   // </div>`;
-//   // }
-// }
